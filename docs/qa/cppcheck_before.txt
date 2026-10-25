@@ -1,0 +1,13 @@
+nofile:0 [information/checkersReport] Active checkers: 172/592 (use --checkers-report=<filename> to see details)
+src/common/Validation.cpp:23 [style/funcArgNamesDifferent] Function 'requireUsername' argument 1 names different: declaration 'username' definition 'u'.
+src/common/Validation.cpp:27 [style/useStlAlgorithm] Consider using std::any_of algorithm instead of a raw loop.
+src/common/Validation.cpp:32 [style/funcArgNamesDifferent] Function 'requirePassword' argument 1 names different: declaration 'password' definition 'p'.
+src/data/SqliteRepositories.cpp:62 [style/funcArgNamesDifferent] Function 'add' argument 1 names different: declaration 'user' definition 'u'.
+src/data/SqliteRepositories.cpp:70 [style/funcArgNamesDifferent] Function 'update' argument 1 names different: declaration 'user' definition 'u'.
+src/services/AccessControl.h:16 [performance/functionStatic] Technically the member function 'lms::AccessControl::require' can be static (but you may consider moving to unnamed namespace).
+src/services/AssessmentService.cpp:102 [style/useStlAlgorithm] Consider using std::transform algorithm instead of a raw loop.
+src/services/AssessmentService.cpp:111 [style/useStlAlgorithm] Consider using std::transform algorithm instead of a raw loop.
+src/services/AssignmentService.cpp:53 [style/constVariableReference] Variable 'a' can be declared as reference to const
+src/strategy/LatePenalty.cpp:7 [style/funcArgNamesDifferent] Function 'lateDays' argument 1 names different: declaration 'effectiveDeadline' definition 'deadline'.
+src/ui/ConsoleApp.h:26 [performance/functionStatic] Technically the member function 'lms::ConsoleApp::pause' can be static (but you may consider moving to unnamed namespace).
+src/ui/ConsoleApp.h:26 [style/unusedPrivateFunction] Unused private function: 'ConsoleApp::pause'

@@ -1,0 +1,287 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 112 tests from 19 test suites.
+[----------] Global test environment set-up.
+[----------] 6 tests from Admin
+[ RUN      ] Admin.CreateUserValidatesAndRejectsDuplicates
+[       OK ] Admin.CreateUserValidatesAndRejectsDuplicates (2 ms)
+[ RUN      ] Admin.InitialAdministratorOnlyWhileSystemIsEmpty
+[       OK ] Admin.InitialAdministratorOnlyWhileSystemIsEmpty (0 ms)
+[ RUN      ] Admin.DeactivateResetPasswordAndSelfProtection
+[       OK ] Admin.DeactivateResetPasswordAndSelfProtection (1 ms)
+[ RUN      ] Admin.DepartmentCourseAndHeadRules
+[       OK ] Admin.DepartmentCourseAndHeadRules (1 ms)
+[ RUN      ] Admin.LecturerAssignmentAndEnrolmentRules
+[       OK ] Admin.LecturerAssignmentAndEnrolmentRules (1 ms)
+[ RUN      ] Admin.CourseListingsDependOnRole
+[       OK ] Admin.CourseListingsDependOnRole (1 ms)
+[----------] 6 tests from Admin (9 ms total)
+
+[----------] 9 tests from Marking
+[ RUN      ] Marking.MarkAndFeedbackAreStoredAndFirstMarkIsAudited
+[       OK ] Marking.MarkAndFeedbackAreStoredAndFirstMarkIsAudited (1 ms)
+[ RUN      ] Marking.LatePenaltyIsAppliedAutomaticallyAndExplainedInTheAudit
+[       OK ] Marking.LatePenaltyIsAppliedAutomaticallyAndExplainedInTheAudit (1 ms)
+[ RUN      ] Marking.WorkMoreThanThreeDaysLateReceivesZero
+[       OK ] Marking.WorkMoreThanThreeDaysLateReceivesZero (1 ms)
+[ RUN      ] Marking.ExtensionRemovesThePenalty
+[       OK ] Marking.ExtensionRemovesThePenalty (2 ms)
+[ RUN      ] Marking.InvalidMarksAndFeedbackAreRejected
+[       OK ] Marking.InvalidMarksAndFeedbackAreRejected (2 ms)
+[ RUN      ] Marking.ChangingAnExistingMarkNeedsAReasonAndIsAudited
+[       OK ] Marking.ChangingAnExistingMarkNeedsAReasonAndIsAudited (2 ms)
+[ RUN      ] Marking.UnchangedMarkWithNewFeedbackDoesNotCreateAuditNoise
+[       OK ] Marking.UnchangedMarkWithNewFeedbackDoesNotCreateAuditNoise (1 ms)
+[ RUN      ] Marking.OnlyTheCourseLecturerMayMarkAndViewSubmissions
+[       OK ] Marking.OnlyTheCourseLecturerMayMarkAndViewSubmissions (1 ms)
+[ RUN      ] Marking.MarkAndAuditAreWrittenInOneTransaction
+[       OK ] Marking.MarkAndAuditAreWrittenInOneTransaction (2 ms)
+[----------] 9 tests from Marking (17 ms total)
+
+[----------] 8 tests from Moderation
+[ RUN      ] Moderation.FullLifecycleSubmittedToReleased
+[       OK ] Moderation.FullLifecycleSubmittedToReleased (1 ms)
+[ RUN      ] Moderation.StudentNeverSeesMarkOrFeedbackBeforeRelease
+[       OK ] Moderation.StudentNeverSeesMarkOrFeedbackBeforeRelease (1 ms)
+[ RUN      ] Moderation.CorrectionRequiredReturnsWorkToLecturerAndNeedsComments
+[       OK ] Moderation.CorrectionRequiredReturnsWorkToLecturerAndNeedsComments (2 ms)
+[ RUN      ] Moderation.ReleaseRequiresApprovalAndWorkflowOrderIsEnforced
+[       OK ] Moderation.ReleaseRequiresApprovalAndWorkflowOrderIsEnforced (2 ms)
+[ RUN      ] Moderation.ApprovedOrReleasedMarksCannotBeChangedByLecturer
+[       OK ] Moderation.ApprovedOrReleasedMarksCannotBeChangedByLecturer (1 ms)
+[ RUN      ] Moderation.HoDOfAnotherDepartmentAndOtherRolesAreRefused
+[       OK ] Moderation.HoDOfAnotherDepartmentAndOtherRolesAreRefused (1 ms)
+[ RUN      ] Moderation.HoDWithoutADepartmentGetsAClearError
+[       OK ] Moderation.HoDWithoutADepartmentGetsAClearError (1 ms)
+[ RUN      ] Moderation.ReleaseAllApprovedReleasesOnlyApprovedMarksOfThatCourse
+[       OK ] Moderation.ReleaseAllApprovedReleasesOnlyApprovedMarksOfThatCourse (2 ms)
+[----------] 8 tests from Moderation (15 ms total)
+
+[----------] 3 tests from Assignments
+[ RUN      ] Assignments.LecturerCreatesAssignmentWithAllDetailsSaved
+[       OK ] Assignments.LecturerCreatesAssignmentWithAllDetailsSaved (1 ms)
+[ RUN      ] Assignments.InvalidInputIsRejected
+[       OK ] Assignments.InvalidInputIsRejected (1 ms)
+[ RUN      ] Assignments.StudentSeesOnlyAssignmentsOfEnrolledCoursesWithStatus
+[       OK ] Assignments.StudentSeesOnlyAssignmentsOfEnrolledCoursesWithStatus (1 ms)
+[----------] 3 tests from Assignments (4 ms total)
+
+[----------] 3 tests from Extensions
+[ RUN      ] Extensions.GrantedExtensionChangesOnlyThatStudentsDeadline
+[       OK ] Extensions.GrantedExtensionChangesOnlyThatStudentsDeadline (1 ms)
+[ RUN      ] Extensions.ReGrantingReplacesPreviousExtension
+[       OK ] Extensions.ReGrantingReplacesPreviousExtension (1 ms)
+[ RUN      ] Extensions.InvalidExtensionsAreRejected
+[       OK ] Extensions.InvalidExtensionsAreRejected (1 ms)
+[----------] 3 tests from Extensions (4 ms total)
+
+[----------] 6 tests from Auth
+[ RUN      ] Auth.LoginSucceedsWithCorrectCredentials
+[       OK ] Auth.LoginSucceedsWithCorrectCredentials (1 ms)
+[ RUN      ] Auth.FailureMessageIsIdenticalForWrongPasswordAndUnknownUser
+[       OK ] Auth.FailureMessageIsIdenticalForWrongPasswordAndUnknownUser (1 ms)
+[ RUN      ] Auth.DeactivatedAccountCannotLogIn
+[       OK ] Auth.DeactivatedAccountCannotLogIn (1 ms)
+[ RUN      ] Auth.MalformedLoginInputIsRejectedWithoutCrash
+[       OK ] Auth.MalformedLoginInputIsRejectedWithoutCrash (1 ms)
+[ RUN      ] Auth.PasswordsAreStoredOnlyAsSaltedHashes
+[       OK ] Auth.PasswordsAreStoredOnlyAsSaltedHashes (2 ms)
+[ RUN      ] Auth.ChangePasswordRequiresCurrentPasswordAndPolicy
+[       OK ] Auth.ChangePasswordRequiresCurrentPasswordAndPolicy (1 ms)
+[----------] 6 tests from Auth (9 ms total)
+
+[----------] 5 tests from Access
+[ RUN      ] Access.PermissionMatrixForAllFourRoles
+[       OK ] Access.PermissionMatrixForAllFourRoles (1 ms)
+[ RUN      ] Access.RoleNamesAreReportedPolymorphically
+[       OK ] Access.RoleNamesAreReportedPolymorphically (1 ms)
+[ RUN      ] Access.ForbiddenActionsThrowAuthorizationError
+[       OK ] Access.ForbiddenActionsThrowAuthorizationError (1 ms)
+[ RUN      ] Access.ScopedChecksStopCrossCourseAndCrossDepartmentAccess
+[       OK ] Access.ScopedChecksStopCrossCourseAndCrossDepartmentAccess (1 ms)
+[ RUN      ] Access.DeactivatedActorIsRefused
+[       OK ] Access.DeactivatedActorIsRefused (1 ms)
+[----------] 5 tests from Access (7 ms total)
+
+[----------] 4 tests from DateTime
+[ RUN      ] DateTime.ParseAndFormatRoundTrip
+[       OK ] DateTime.ParseAndFormatRoundTrip (0 ms)
+[ RUN      ] DateTime.LeapYearHandling
+[       OK ] DateTime.LeapYearHandling (0 ms)
+[ RUN      ] DateTime.RejectsInvalidInput
+[       OK ] DateTime.RejectsInvalidInput (0 ms)
+[ RUN      ] DateTime.ArithmeticAndOrdering
+[       OK ] DateTime.ArithmeticAndOrdering (0 ms)
+[----------] 4 tests from DateTime (0 ms total)
+
+[----------] 4 tests from Validation
+[ RUN      ] Validation.Username
+[       OK ] Validation.Username (0 ms)
+[ RUN      ] Validation.PasswordBoundaries
+[       OK ] Validation.PasswordBoundaries (0 ms)
+[ RUN      ] Validation.MarkBoundaries
+[       OK ] Validation.MarkBoundaries (0 ms)
+[ RUN      ] Validation.MaxMarkAndText
+[       OK ] Validation.MaxMarkAndText (0 ms)
+[----------] 4 tests from Validation (0 ms total)
+
+[----------] 9 tests from SystemTest
+[ RUN      ] SystemTest.FirstRunSetupCreatesAdministratorThenAllowsLogin
+[       OK ] SystemTest.FirstRunSetupCreatesAdministratorThenAllowsLogin (0 ms)
+[ RUN      ] SystemTest.AdministratorSetsUpTheWholeSchoolThroughTheMenus
+[       OK ] SystemTest.AdministratorSetsUpTheWholeSchoolThroughTheMenus (1 ms)
+[ RUN      ] SystemTest.EndToEndSubmitMarkModerateReleaseThroughTheUi
+[       OK ] SystemTest.EndToEndSubmitMarkModerateReleaseThroughTheUi (2 ms)
+[ RUN      ] SystemTest.LateSubmissionAndPenaltyVisibleToLecturerThroughUi
+[       OK ] SystemTest.LateSubmissionAndPenaltyVisibleToLecturerThroughUi (2 ms)
+[ RUN      ] SystemTest.ExceptionFlowsNeverCrashAndShowFriendlyMessages
+[       OK ] SystemTest.ExceptionFlowsNeverCrashAndShowFriendlyMessages (1 ms)
+[ RUN      ] SystemTest.AccessIsLimitedByRoleThroughTheUi
+[       OK ] SystemTest.AccessIsLimitedByRoleThroughTheUi (1 ms)
+[ RUN      ] SystemTest.DatabaseFailureIsReportedWithoutCrashOrInternalDetails
+[       OK ] SystemTest.DatabaseFailureIsReportedWithoutCrashOrInternalDetails (1 ms)
+[ RUN      ] SystemTest.PasswordChangeThroughUi
+[       OK ] SystemTest.PasswordChangeThroughUi (1 ms)
+[ RUN      ] SystemTest.ExtensionFlowThroughUi
+[       OK ] SystemTest.ExtensionFlowThroughUi (1 ms)
+[----------] 9 tests from SystemTest (16 ms total)
+
+[----------] 2 tests from LatePenalty
+[ RUN      ] LatePenalty.PenaltyIsTenPercentOfMaximumNotOfTheMarkEarned
+[       OK ] LatePenalty.PenaltyIsTenPercentOfMaximumNotOfTheMarkEarned (0 ms)
+[ RUN      ] LatePenalty.StrategyIsReplaceableViaInterface
+[       OK ] LatePenalty.StrategyIsReplaceableViaInterface (0 ms)
+[----------] 2 tests from LatePenalty (0 ms total)
+
+[----------] 5 tests from PasswordHasher
+[ RUN      ] PasswordHasher.VerifiesCorrectAndRejectsWrongPassword
+[       OK ] PasswordHasher.VerifiesCorrectAndRejectsWrongPassword (0 ms)
+[ RUN      ] PasswordHasher.SamePasswordGetsDifferentSaltAndHash
+[       OK ] PasswordHasher.SamePasswordGetsDifferentSaltAndHash (0 ms)
+[ RUN      ] PasswordHasher.StoredFormIsHexAndNeverContainsThePassword
+[       OK ] PasswordHasher.StoredFormIsHexAndNeverContainsThePassword (0 ms)
+[ RUN      ] PasswordHasher.MalformedStoredValuesFailSafely
+[       OK ] PasswordHasher.MalformedStoredValuesFailSafely (0 ms)
+[ RUN      ] PasswordHasher.ProductionProfileInterOperatesWithItself
+[       OK ] PasswordHasher.ProductionProfileInterOperatesWithItself (135 ms)
+[----------] 5 tests from PasswordHasher (135 ms total)
+
+[----------] 1 test from Performance
+[ RUN      ] Performance.LoginAndCommonQueriesWithin2SecondsFor800Students
+[       OK ] Performance.LoginAndCommonQueriesWithin2SecondsFor800Students (528 ms)
+[----------] 1 test from Performance (528 ms total)
+
+[----------] 10 tests from Repositories
+[ RUN      ] Repositories.UserRoundTripPreservesRoleAndPolymorphism
+[       OK ] Repositories.UserRoundTripPreservesRoleAndPolymorphism (1 ms)
+[ RUN      ] Repositories.DuplicateUsernameRejectedByDatabaseConstraint
+[       OK ] Repositories.DuplicateUsernameRejectedByDatabaseConstraint (1 ms)
+[ RUN      ] Repositories.ParameterisedQueriesNeutraliseSqlInjection
+[       OK ] Repositories.ParameterisedQueriesNeutraliseSqlInjection (1 ms)
+[ RUN      ] Repositories.ForeignKeysAreEnforced
+[       OK ] Repositories.ForeignKeysAreEnforced (1 ms)
+[ RUN      ] Repositories.DatabaseRejectsMarkAboveAssignmentMaximum
+[       OK ] Repositories.DatabaseRejectsMarkAboveAssignmentMaximum (1 ms)
+[ RUN      ] Repositories.OneSubmissionPerStudentPerAssignment
+[       OK ] Repositories.OneSubmissionPerStudentPerAssignment (1 ms)
+[ RUN      ] Repositories.TransactionRollsBackOnException
+[       OK ] Repositories.TransactionRollsBackOnException (1 ms)
+[ RUN      ] Repositories.NestedTransactionsJoinOuterAndRollBackTogether
+[       OK ] Repositories.NestedTransactionsJoinOuterAndRollBackTogether (2 ms)
+[ RUN      ] Repositories.ExtensionUpsertKeepsOneRowPerStudentAssignment
+[       OK ] Repositories.ExtensionUpsertKeepsOneRowPerStudentAssignment (1 ms)
+[ RUN      ] Repositories.ListingQueriesRespectScope
+[       OK ] Repositories.ListingQueriesRespectScope (1 ms)
+[----------] 10 tests from Repositories (17 ms total)
+
+[----------] 1 test from Database
+[ RUN      ] Database.SchemaInitialisationIsIdempotentAndBadPathFails
+[       OK ] Database.SchemaInitialisationIsIdempotentAndBadPathFails (1 ms)
+[----------] 1 test from Database (1 ms total)
+
+[----------] 8 tests from Submit
+[ RUN      ] Submit.OnTimeSubmissionIsRecorded
+[       OK ] Submit.OnTimeSubmissionIsRecorded (1 ms)
+[ RUN      ] Submit.ResubmissionBeforeDeadlineReplacesTheSameRecord
+[       OK ] Submit.ResubmissionBeforeDeadlineReplacesTheSameRecord (1 ms)
+[ RUN      ] Submit.ResubmissionAfterDeadlineIsRejectedAndOldVersionKept
+[       OK ] Submit.ResubmissionAfterDeadlineIsRejectedAndOldVersionKept (1 ms)
+[ RUN      ] Submit.LateFirstSubmissionCannotBeResubmitted
+[       OK ] Submit.LateFirstSubmissionCannotBeResubmitted (1 ms)
+[ RUN      ] Submit.ResubmissionAfterMarkingIsRejected
+[       OK ] Submit.ResubmissionAfterMarkingIsRejected (1 ms)
+[ RUN      ] Submit.ExtensionMovesTheDeadlineSoLateWorkBecomesOnTime
+[       OK ] Submit.ExtensionMovesTheDeadlineSoLateWorkBecomesOnTime (1 ms)
+[ RUN      ] Submit.ExtensionGrantedAfterLateSubmissionAllowsResubmission
+[       OK ] Submit.ExtensionGrantedAfterLateSubmissionAllowsResubmission (1 ms)
+[ RUN      ] Submit.ExceptionFlows
+[       OK ] Submit.ExceptionFlows (1 ms)
+[----------] 8 tests from Submit (14 ms total)
+
+[----------] 11 tests from Boundaries/LateDaysBoundary
+[ RUN      ] Boundaries/LateDaysBoundary.CountsWholeDaysAndRoundsUp/0
+[       OK ] Boundaries/LateDaysBoundary.CountsWholeDaysAndRoundsUp/0 (0 ms)
+[ RUN      ] Boundaries/LateDaysBoundary.CountsWholeDaysAndRoundsUp/1
+[       OK ] Boundaries/LateDaysBoundary.CountsWholeDaysAndRoundsUp/1 (0 ms)
+[ RUN      ] Boundaries/LateDaysBoundary.CountsWholeDaysAndRoundsUp/2
+[       OK ] Boundaries/LateDaysBoundary.CountsWholeDaysAndRoundsUp/2 (0 ms)
+[ RUN      ] Boundaries/LateDaysBoundary.CountsWholeDaysAndRoundsUp/3
+[       OK ] Boundaries/LateDaysBoundary.CountsWholeDaysAndRoundsUp/3 (0 ms)
+[ RUN      ] Boundaries/LateDaysBoundary.CountsWholeDaysAndRoundsUp/4
+[       OK ] Boundaries/LateDaysBoundary.CountsWholeDaysAndRoundsUp/4 (0 ms)
+[ RUN      ] Boundaries/LateDaysBoundary.CountsWholeDaysAndRoundsUp/5
+[       OK ] Boundaries/LateDaysBoundary.CountsWholeDaysAndRoundsUp/5 (0 ms)
+[ RUN      ] Boundaries/LateDaysBoundary.CountsWholeDaysAndRoundsUp/6
+[       OK ] Boundaries/LateDaysBoundary.CountsWholeDaysAndRoundsUp/6 (0 ms)
+[ RUN      ] Boundaries/LateDaysBoundary.CountsWholeDaysAndRoundsUp/7
+[       OK ] Boundaries/LateDaysBoundary.CountsWholeDaysAndRoundsUp/7 (0 ms)
+[ RUN      ] Boundaries/LateDaysBoundary.CountsWholeDaysAndRoundsUp/8
+[       OK ] Boundaries/LateDaysBoundary.CountsWholeDaysAndRoundsUp/8 (0 ms)
+[ RUN      ] Boundaries/LateDaysBoundary.CountsWholeDaysAndRoundsUp/9
+[       OK ] Boundaries/LateDaysBoundary.CountsWholeDaysAndRoundsUp/9 (0 ms)
+[ RUN      ] Boundaries/LateDaysBoundary.CountsWholeDaysAndRoundsUp/10
+[       OK ] Boundaries/LateDaysBoundary.CountsWholeDaysAndRoundsUp/10 (0 ms)
+[----------] 11 tests from Boundaries/LateDaysBoundary (0 ms total)
+
+[----------] 9 tests from Partitions/PenaltyMarks
+[ RUN      ] Partitions/PenaltyMarks.AppliesTenPercentOfMaxPerDayThenZero/0
+[       OK ] Partitions/PenaltyMarks.AppliesTenPercentOfMaxPerDayThenZero/0 (0 ms)
+[ RUN      ] Partitions/PenaltyMarks.AppliesTenPercentOfMaxPerDayThenZero/1
+[       OK ] Partitions/PenaltyMarks.AppliesTenPercentOfMaxPerDayThenZero/1 (0 ms)
+[ RUN      ] Partitions/PenaltyMarks.AppliesTenPercentOfMaxPerDayThenZero/2
+[       OK ] Partitions/PenaltyMarks.AppliesTenPercentOfMaxPerDayThenZero/2 (0 ms)
+[ RUN      ] Partitions/PenaltyMarks.AppliesTenPercentOfMaxPerDayThenZero/3
+[       OK ] Partitions/PenaltyMarks.AppliesTenPercentOfMaxPerDayThenZero/3 (0 ms)
+[ RUN      ] Partitions/PenaltyMarks.AppliesTenPercentOfMaxPerDayThenZero/4
+[       OK ] Partitions/PenaltyMarks.AppliesTenPercentOfMaxPerDayThenZero/4 (0 ms)
+[ RUN      ] Partitions/PenaltyMarks.AppliesTenPercentOfMaxPerDayThenZero/5
+[       OK ] Partitions/PenaltyMarks.AppliesTenPercentOfMaxPerDayThenZero/5 (0 ms)
+[ RUN      ] Partitions/PenaltyMarks.AppliesTenPercentOfMaxPerDayThenZero/6
+[       OK ] Partitions/PenaltyMarks.AppliesTenPercentOfMaxPerDayThenZero/6 (0 ms)
+[ RUN      ] Partitions/PenaltyMarks.AppliesTenPercentOfMaxPerDayThenZero/7
+[       OK ] Partitions/PenaltyMarks.AppliesTenPercentOfMaxPerDayThenZero/7 (0 ms)
+[ RUN      ] Partitions/PenaltyMarks.AppliesTenPercentOfMaxPerDayThenZero/8
+[       OK ] Partitions/PenaltyMarks.AppliesTenPercentOfMaxPerDayThenZero/8 (0 ms)
+[----------] 9 tests from Partitions/PenaltyMarks (0 ms total)
+
+[----------] 8 tests from Boundaries/SubmitBoundary
+[ RUN      ] Boundaries/SubmitBoundary.DeadlineAndPenaltyBoundaries/0
+[       OK ] Boundaries/SubmitBoundary.DeadlineAndPenaltyBoundaries/0 (1 ms)
+[ RUN      ] Boundaries/SubmitBoundary.DeadlineAndPenaltyBoundaries/1
+[       OK ] Boundaries/SubmitBoundary.DeadlineAndPenaltyBoundaries/1 (1 ms)
+[ RUN      ] Boundaries/SubmitBoundary.DeadlineAndPenaltyBoundaries/2
+[       OK ] Boundaries/SubmitBoundary.DeadlineAndPenaltyBoundaries/2 (1 ms)
+[ RUN      ] Boundaries/SubmitBoundary.DeadlineAndPenaltyBoundaries/3
+[       OK ] Boundaries/SubmitBoundary.DeadlineAndPenaltyBoundaries/3 (1 ms)
+[ RUN      ] Boundaries/SubmitBoundary.DeadlineAndPenaltyBoundaries/4
+[       OK ] Boundaries/SubmitBoundary.DeadlineAndPenaltyBoundaries/4 (1 ms)
+[ RUN      ] Boundaries/SubmitBoundary.DeadlineAndPenaltyBoundaries/5
+[       OK ] Boundaries/SubmitBoundary.DeadlineAndPenaltyBoundaries/5 (1 ms)
+[ RUN      ] Boundaries/SubmitBoundary.DeadlineAndPenaltyBoundaries/6
+[       OK ] Boundaries/SubmitBoundary.DeadlineAndPenaltyBoundaries/6 (1 ms)
+[ RUN      ] Boundaries/SubmitBoundary.DeadlineAndPenaltyBoundaries/7
+[       OK ] Boundaries/SubmitBoundary.DeadlineAndPenaltyBoundaries/7 (2 ms)
+[----------] 8 tests from Boundaries/SubmitBoundary (14 ms total)
+
+[----------] Global test environment tear-down
+[==========] 112 tests from 19 test suites ran. (797 ms total)
+[  PASSED  ] 112 tests.
