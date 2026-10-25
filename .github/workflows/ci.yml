@@ -1,0 +1,21 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y cmake g++ libsqlite3-dev libsodium-dev libgtest-dev cppcheck gcovr
+      - name: Configure (coverage, warnings as errors)
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Debug -DLMS_COVERAGE=ON -DLMS_WERROR=ON
+      - name: Build
+        run: cmake --build build -j2
+      - name: Run tests
+        run: ctest --test-dir build --output-on-failure
+      - name: Coverage of the business-logic layer
+        run: >
+          gcovr -r . build --filter 'src/services/' --filter 'src/strategy/' --filter 'src/domain/'
+          --filter 'src/common/' --filter 'src/security/' --txt --fail-under-line 70
+      - name: Static analysis
+        run: cppcheck --enable=warning,style,performance,portability --std=c++17 -Isrc --error-exitcode=1 --suppress=missingIncludeSystem src tools
